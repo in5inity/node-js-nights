@@ -6,6 +6,10 @@ const dogs = require('./dogs')
 const router = new Router()
 const { validate } = require('./utils/validation')
 
+// It's not a problem now, but for the next homework consider not passing the whole context to
+// the validation function. It hides where the data actually comes from
+// (request body, query params, headers, ..) and from the name of the function
+// one wouldn't expect it to mutate the context as it does on failure.
 function validateInternal(ctx) {
   const schema = {
     type: 'Object',
